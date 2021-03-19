@@ -38,7 +38,9 @@ new usage paradigms. Existing scripts will **NOT** work without substantial chan
 
 - [v1.0.0-Preview1](https://github.com/Windos/BurntToast/releases/download/v1.0.0-Preview1/BurntToast.zip)
 
-  - 
+  - UPDATE: Microsoft.Windows.SDK.NET.Ref libraries to 10.0.19041.15
+  
+  - UPDATE: Microsoft.Toolkit.Uwp.Notifications library to 7.0.0
 
 - see more in the [Full Change Log](CHANGES.md)
 

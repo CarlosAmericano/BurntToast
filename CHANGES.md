@@ -1,5 +1,13 @@
 # Full Change Log
 
+- [v1.0.0-Preview1](https://github.com/Windos/BurntToast/releases/download/v1.0.0-Preview1/BurntToast.zip)
+
+  - UPDATE: Microsoft.Windows.SDK.NET.Ref libraries to 10.0.19041.15
+  
+  - UPDATE: Microsoft.Toolkit.Uwp.Notifications library to 7.0.0
+
+- see more in the [Full Change Log](CHANGES.md)
+
 - [0.8.5](https://github.com/Windos/BurntToast/releases/download/v0.8.5/BurntToast.zip)
 
   - Actually implement the ability to use a UniqueIdentifier with the Remove-BTNotification function (which was half implemented in 0.8.4)
