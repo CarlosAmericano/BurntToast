@@ -3,7 +3,7 @@
 - [v1.0.0-Preview1](https://github.com/Windos/BurntToast/releases/download/v1.0.0-Preview1/BurntToast.zip)
 
   - UPDATE: Microsoft.Windows.SDK.NET.Ref libraries to 10.0.19041.15
-  
+
   - UPDATE: Microsoft.Toolkit.Uwp.Notifications library to 7.0.0
 
 - see more in the [Full Change Log](CHANGES.md)
@@ -68,7 +68,7 @@
 
   - Fix: Curly Braces when "Reminder" pops up ([#72](https://github.com/Windos/BurntToast/issues/72))
 
-  - Fix: Caching remote gifs are saved based on their remote filename and not overwritten ([#105](https://github.com/Windos/BurntToast/issues/105))
+  - Fix: Caching remote GIFs are saved based on their remote filename and not overwritten ([#105](https://github.com/Windos/BurntToast/issues/105))
 
     - Thanks [@KelvinTegelaar](https://github.com/KelvinTegelaar)
 
@@ -86,7 +86,7 @@
 
   - Enhancement: Validate that image paths exist
 
-  - Fix: Reverted to XML clean up to remove curly braces if databindings are not being used (Issue #72)
+  - Fix: Reverted to XML clean up to remove curly braces if data bindings are not being used (Issue #72)
 
   - Known Issues:
 
@@ -113,7 +113,7 @@
 
   - You can now adjust a toasts timestamp (both past and future) using the `CustomTimestamp` parameter on `New-BurntToastNotification` and `New-BTContent`.
 
-    - If not specified, the system uses the time at which the toast was received and this may not accuratly reflect the intent of the notification.
+    - If not specified, the system uses the time at which the toast was received and this may not accurately reflect the intent of the notification.
 
 - [v0.6.3](https://github.com/Windos/BurntToast/releases/download/v0.6.3/BurntToast.zip)
 
@@ -141,7 +141,7 @@
 
   - Fixed Issue #18, Images from the internet will now be downloaded locally
 
-    - Supports regular images, hero images, and applogo
+    - Supports regular images, hero images, and app logos
 
   - All functions now included in .psm1 for release (Thanks @chrislgardner)
 
@@ -171,7 +171,7 @@
 
   - Specify a unique identifier in order to replace existing toasts
 
-  - You can specify a custom sound file using the -Path parameter of the New-BTAudio function. This hasn''t been exposed through the main function... that poor thing is getting bloated.
+  - You can specify a custom sound file using the -Path parameter of the New-BTAudio function. This hasn't been exposed through the main function... that poor thing is getting bloated.
 
   - There is now help for every public function, and the online version for each of them can be found on github. Specify the -Online switch when using Get-Help to be taken directly there.
 
@@ -193,7 +193,7 @@
   - Confirmed: Now **ONLY** works on Windows 10
   - BurntToast now has its own, original, logo!
   - New public function to adjust function level of module: Set-BTFunctionLevel
-  - Implemented checking for and registering of AppId in the registry to ensure proper Toast behaviour in the Action Center
+  - Implemented checking for and registering of AppId in the registry to ensure proper Toast behavior in the Action Center
 
 - [v0.5.0](https://github.com/Windos/BurntToast/releases/download/v0.5.0/BurntToast.zip)
 
