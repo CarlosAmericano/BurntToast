@@ -19,12 +19,11 @@ function Add-BTText {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory,
-                   ValueFromPipeline,
-                   Position = 0)]
+                   ValueFromPipeline)]
         [Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder] $ContentBuilder,
 
         [Parameter(Mandatory,
-                   Position = 1)]
+                   Position = 0)]
         [ValidateNotNull()]
         [string[]] $Text
     )

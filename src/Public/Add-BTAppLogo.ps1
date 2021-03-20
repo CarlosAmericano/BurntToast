@@ -19,11 +19,10 @@ function Add-BTAppLogo {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory,
-                   ValueFromPipeline,
-                   Position = 0)]
+                   ValueFromPipeline)]
         [Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder] $ContentBuilder,
 
-        [Parameter(Position = 1)]
+        [Parameter(Position = 0)]
         [ValidateNotNullOrEmpty()]
         [Alias('Uri')]
         [Uri] $Source = $Script:DefaultImage,
