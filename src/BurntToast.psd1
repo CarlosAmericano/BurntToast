@@ -7,11 +7,13 @@
     Copyright         = '(c) 2015 Joshua (Windos) King. All rights reserved.'
     Description       = 'Module for creating and displaying Toast Notifications on Microsoft Windows 10.'
     PowerShellVersion = '5.0'
-    FunctionsToExport = 'New-BurntToastNotification',
-                        'Submit-BTNotification',
-                        'Update-BTNotification'
+    FunctionsToExport = 'Add-BTAppLogo',
+                        'Add-BTText',
+                        'New-BTContentBuilder',
+                        'New-BurntToastNotification',
+                        'Submit-BTNotification'
     CmdletsToExport   = @()
-    AliasesToExport   = @('Toast')
+    AliasesToExport   = @('Toast', 'Builder')
     PrivateData       = @{
         PSData = @{
             Tags         = @('Notifications', 'Utilities', 'Windows10', 'Toast')
