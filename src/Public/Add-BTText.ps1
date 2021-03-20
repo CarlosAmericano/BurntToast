@@ -48,13 +48,13 @@ function Add-BTText {
         $paraLanguage = if ($Language) {$Language} else {$null}
 
         foreach ($Line in $Text) {
-            $ContentBuilder.AddText($Line,
-                                    $paraStyle,
-                                    $paraWrap,
-                                    $paraMaxLines,
-                                    $paraMinLines,
-                                    $paraAlign,
-                                    $paraLanguage)
+            $null = $ContentBuilder.AddText($Line,
+                                            $paraStyle,
+                                            $paraWrap,
+                                            $paraMaxLines,
+                                            $paraMinLines,
+                                            $paraAlign,
+                                            $paraLanguage)
         }
     }
     end {}
