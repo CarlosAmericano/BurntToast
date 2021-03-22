@@ -13,12 +13,12 @@ function New-BTContentBuilder {
         Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder
 
         .EXAMPLE
-        $Builder = New-BTContentBuilder
+        PS C:\>$Builder = New-BTContentBuilder
 
         This example creates a new toast content builder object and storing it in a variable named $Builder.
 
         .EXAMPLE
-        $Builder = Builder
+        PS C:\>$Builder = Builder
 
         This example creates a new toast content builder object using the Builder alias and storing it in a variable named $Builder.
 
