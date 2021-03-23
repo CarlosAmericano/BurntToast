@@ -28,15 +28,7 @@ jobs:
       - name: 👍 Invoke PSSA
         shell: pwsh
         run: |
-          $PssaSplat = @{
-              Path          = ".\src"
-              Recurse       = $true
-              EnableExit    = $true
-              ReportSummary = $true
-              ExcludeRule   = $ExcludedRules
-              #Severity      = 'Error'
-          }
-          Invoke-ScriptAnalyzer @PssaSplat
+          ./tests/pssa.ps1
 
       - name: ✅ Invoke Pester
         shell: pwsh
