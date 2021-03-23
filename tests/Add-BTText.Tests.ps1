@@ -16,7 +16,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[0].HintMaxLines | Should -BeNullOrEmpty
         }
     }
-    
+
     Context 'add one text element by pipeline' {
         BeforeAll {
             $Builder = New-BTContentBuilder
