@@ -2,6 +2,7 @@ name: Quality Assurance
 on: [push, pull_request]
 jobs:
   assure-quality:
+    name: Assure Quality
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +29,7 @@ jobs:
       - name: 👍 Invoke PSSA
         shell: pwsh
         run: |
-          ./tests/pssa.ps1
+          ./tests/_pssa.ps1
 
       - name: ✅ Invoke Pester
         shell: pwsh
