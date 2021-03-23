@@ -8,7 +8,7 @@ param (
 Write-Host "Starting Tests" -ForegroundColor Green
 
 Write-PSFMessage -Level Important -Message "Importing Module"
-Import-Module "$PSScriptRoot\..\tentools.psd1"
+Import-Module "$PSScriptRoot\..\src\BurntToast.psd1"
 
 $totalFailed = 0
 $totalRun = 0
