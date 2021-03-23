@@ -85,6 +85,13 @@ function Add-BTText {
 
         This means the toast notification can now accept four custom text elements, each with a max line count of 1, for a total line count of 4.
 
+        .EXAMPLE
+        PS C:\>$Builder = New-BTContentBuilder
+
+        PS C:\>$Builder | Add-BTText -Text 'First Line of Text' -Language en-NZ
+
+        Thie example specifies that the language included in the text element is New Zealand English using the relevant BCP-47 code, en-NZ.
+
         .NOTES
         A toast notification can contain a maximum of four reserved lines of text. By default this means you can include three customer text elements as the first, which acts like a heading, automatically reserves 2 lines.
 
@@ -131,14 +138,7 @@ function Add-BTText {
 
         try {
             foreach ($Line in $Text) {
-                if ($null -ne $Language) {
-                    $null = $ContentBuilder.AddText($Line,
-                                                    $paraStyle,
-                                                    $paraWrap,
-                                                    $paraMaxLines,
-                                                    $paraMinLines,
-                                                    $paraAlign)
-                } else {
+                if ($Language) {
                     $null = $ContentBuilder.AddText($Line,
                                                     $paraStyle,
                                                     $paraWrap,
@@ -146,6 +146,13 @@ function Add-BTText {
                                                     $paraMinLines,
                                                     $paraAlign,
                                                     $Language)
+                } else {
+                    $null = $ContentBuilder.AddText($Line,
+                                                    $paraStyle,
+                                                    $paraWrap,
+                                                    $paraMaxLines,
+                                                    $paraMinLines,
+                                                    $paraAlign)
                 }
             }
         } catch {

@@ -131,4 +131,18 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[3].HintMaxLines | Should -BeNullOrEmpty
         }
     }
+    Context 'specify langauge' {
+        BeforeAll {
+            $Builder = New-BTContentBuilder
+            $Builder | Add-BTText -Text 'First Line of Text' -Language 'en-NZ'
+        }
+
+        It 'picks up the specified language tag' {
+            $Builder.Content.Visual.BindingGeneric.Children[0].Language | Should -BeExactly 'en-NZ'
+        }
+        It 'generates the expected XML' {
+            $ExpectedXML = '<?xml version="1.0"?><toast><visual><binding template="ToastGeneric"><text lang="en-NZ">First Line of Text</text></binding></visual></toast>'
+            $Builder.GetXml().GetXml() | Should -BeExactly $ExpectedXML
+        }
+    }
 }
