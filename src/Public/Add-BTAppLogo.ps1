@@ -19,12 +19,13 @@ function Add-BTAppLogo {
 
     [CmdletBinding()]
     param (
+        # The toast content builder obejct that represents the toast notification being constructed.
         [Parameter(Mandatory,
                    ValueFromPipeline)]
         [Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder] $ContentBuilder,
 
-        # The URI of the image. Can be from your application package, application data, or the internet.
-        # Internet images must be less than 200 KB in size.
+        # The URI of the image. Can be from your local computer, network location, or the internet.
+        # Online images will be downloaded and cached in the user's TEMP directory for future use.
         [Parameter(Position = 0)]
         [ValidateNotNullOrEmpty()]
         [Alias('Uri')]
@@ -36,9 +37,8 @@ function Add-BTAppLogo {
         # A description of the image, for users of assistive technologies.
         [string] $AlternateText,
 
-        # Specify whether Windows is allowed to append a query string to the image URI supplied in the Tile notification.
-        [switch] $AddImageQuery,
-
+        # Specify that the online images should be downloaded, regardless of if they have been cached to the TEMP directory.
+        # Used when the online resource has been updated and you need to ensure that users see the latest version.
         [switch] $IgnoreCache
     )
 

@@ -105,6 +105,7 @@ function Add-BTText {
 
     [CmdletBinding()]
     param (
+        # The toast content builder obejct that represents the toast notification being constructed.
         [Parameter(Mandatory,
                    ValueFromPipeline)]
         [Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder] $ContentBuilder,
