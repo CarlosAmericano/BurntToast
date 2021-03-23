@@ -26,7 +26,7 @@ jobs:
           Set-PSRepository PSGallery -InstallationPolicy Trusted
           Install-Module ${{ steps.psmodulecache.outputs.needed }} -ErrorAction Stop
 
-      - name: 👍 Invoke PSSA
+      - name: 👍 Invoke PSScriptAnalyzer
         shell: pwsh
         run: |
           ./tests/_pssa.ps1
