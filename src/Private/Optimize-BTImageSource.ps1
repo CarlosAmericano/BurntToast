@@ -1,4 +1,4 @@
-function Optimize-BTImageSource {
+﻿function Optimize-BTImageSource {
     param (
         [Parameter(Mandatory)]
         [String] $Source,

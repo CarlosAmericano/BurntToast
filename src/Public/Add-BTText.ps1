@@ -1,4 +1,4 @@
-function Add-BTText {
+﻿function Add-BTText {
     <#
         .SYNOPSIS
         Add text to the toast.
