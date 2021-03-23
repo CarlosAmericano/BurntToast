@@ -93,11 +93,10 @@ function Add-BTAppLogo {
         # Online images will be downloaded and cached in the user's TEMP directory for future use.
         [Parameter(Position = 0)]
         [ValidateNotNullOrEmpty()]
-        [Alias('Uri')]
-        [Uri] $Source = $Script:DefaultImage,
+        [string] $Source = $Script:DefaultImage,
 
         # Specify how the image should be cropped.
-        [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImageCrop] $Crop,
+        [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImageCrop] $Crop = 'Default',
 
         # A description of the image, for users of assistive technologies.
         [string] $AlternateText,
@@ -112,20 +111,20 @@ function Add-BTAppLogo {
 
     begin {}
     process {
-        $paramCrop    = if ($Crop) {$Crop} else {'Default'}
-        $paramAltText = if ($AlternateText) {$AlternateText} else {$null}
-        $paramQuery   = if ($AddImageQuery) {$AddImageQuery} else {$null}
-
         $paramSrc = if ($IgnoreCache) {
             Optimize-BTImageSource -Source $Source -ForceRefresh
         } else {
             Optimize-BTImageSource -Source $Source
         }
 
-        $null = $ContentBuilder.AddAppLogoOverride($paramSrc,
-                                                   $paramCrop,
-                                                   $paramAltText,
-                                                   $paramQuery)
+        if ($AlternateText) {
+            $null = $ContentBuilder.AddAppLogoOverride($paramSrc,
+                                                       $Crop,
+                                                       $AlternateText)
+        } else {
+            $null = $ContentBuilder.AddAppLogoOverride($paramSrc,
+                                                       $Crop)
+        }
 
         if ($PassThru) {
             $ContentBuilder

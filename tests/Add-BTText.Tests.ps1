@@ -16,6 +16,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[0].HintMaxLines | Should -BeNullOrEmpty
         }
     }
+    
     Context 'add one text element by pipeline' {
         BeforeAll {
             $Builder = New-BTContentBuilder
@@ -33,6 +34,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[0].HintMaxLines | Should -BeNullOrEmpty
         }
     }
+
     Context 'add two text elements with one function call' {
         BeforeAll {
             $Builder = New-BTContentBuilder
@@ -51,6 +53,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[1].HintMaxLines | Should -BeNullOrEmpty
         }
     }
+
     Context 'add two text elements with two function calls' {
         BeforeAll {
             $Builder = New-BTContentBuilder
@@ -70,6 +73,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[1].HintMaxLines | Should -BeNullOrEmpty
         }
     }
+
     Context 'add three text elements with three function calls piped together with PassThru parameter' {
         BeforeAll {
             $Builder = New-BTContentBuilder
@@ -91,6 +95,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[2].HintMaxLines | Should -BeNullOrEmpty
         }
     }
+
     Context 'attempting to add too many lines of text to a single toast' {
         It 'generates a warning and only ends up with three text elements' {
             $CaptureFile = "$PSScriptRoot\WarningContent.txt"
@@ -109,6 +114,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children | Should -HaveCount 3
         }
     }
+
     Context 'set first text element to maxlines 1, then add three more text elements' {
         BeforeAll {
             $Builder = New-BTContentBuilder
@@ -132,6 +138,7 @@ Describe 'Add-BTText' {
             $Builder.GetToastContent().Visual.BindingGeneric.Children[3].HintMaxLines | Should -BeNullOrEmpty
         }
     }
+
     Context 'specify langauge' {
         BeforeAll {
             $Builder = New-BTContentBuilder
