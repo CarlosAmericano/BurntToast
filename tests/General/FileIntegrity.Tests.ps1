@@ -43,34 +43,29 @@ Describe "Verifying integrity of module files" {
 	Context "Validating PS1 Script file - <_.Name>" -Foreach $allFilesPs1 {
 			BeforeAll {
 				$file = $_
-				$global:ShortName = $file.Name
 
 				$tokens = $null
 				$parseErrors = $null
 				$ast = [System.Management.Automation.Language.Parser]::ParseFile($file.FullName, [ref]$tokens, [ref]$parseErrors)
 			}
 
-			BeforeEach {
-				$name = $file.name
-			}
-
-			It "[<_.Name>] Should have UTF8 encoding" {
+			It "Should have UTF8 encoding" {
 				Get-FileEncoding -Path $file.FullName | Should -Be 'UTF8'
 			}
 
-			It "[<_.Name>] Should have no trailing space" {
+			It "Should have no trailing space" {
 				($file | Select-String "\s$" | Where-Object { $_.Line.Trim().Length -gt 0} | Measure-Object).Count | Should -Be 0
 			}
 
-			It "[<_.Name>] Should have no syntax errors" {
+			It "Should have no syntax errors" {
 				$parseErrors | Should -BeNullOrEmpty
 			}
 
-					It "[$($Global:ShortName)] Should not use <_>" -TestCases $global:BannedCommands {
-						$tokens | Where-Object Text -EQ $_ | Should -BeNullOrEmpty
-					}
+			It "Should not use <_>" -TestCases $global:BannedCommands {
+				$tokens | Where-Object Text -EQ $_ | Should -BeNullOrEmpty
+			}
 
-			It "[<_.Name>] Should not contain aliases" {
+			It "Should not contain aliases" {
 				$tokens | Where-Object TokenFlags -eq CommandName | Where-Object { Test-Path "alias:\$($_.Text)" } | Measure-Object | Select-Object -ExpandProperty Count | Should -Be 0
 			}
 
