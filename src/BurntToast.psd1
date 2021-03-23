@@ -9,11 +9,9 @@
     PowerShellVersion = '5.0'
     FunctionsToExport = 'Add-BTAppLogo',
                         'Add-BTText',
-                        'New-BTContentBuilder',
-                        'New-BurntToastNotification',
-                        'Submit-BTNotification'
+                        'New-BTContentBuilder'
     CmdletsToExport   = @()
-    AliasesToExport   = @('Toast', 'Builder')
+    AliasesToExport   = @('Builder')
     PrivateData       = @{
         PSData = @{
             Tags         = @('Notifications', 'Utilities', 'Windows10', 'Toast')
