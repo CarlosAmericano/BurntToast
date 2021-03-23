@@ -4,7 +4,7 @@ if ($WinMajorVersion -ge 10) {
     $Public = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -ErrorAction SilentlyContinue )
     $Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue )
 
-    $Paths = $Library = if ($IsWindows) {
+    $Paths = if ($IsWindows) {
         "$PSScriptRoot\lib\Microsoft.Toolkit.Uwp.Notifications\net5.0-windows10.0.17763\*.dll",
         "$PSScriptRoot\lib\Microsoft.Windows.SDK.NET\*.dll"
     } else {
