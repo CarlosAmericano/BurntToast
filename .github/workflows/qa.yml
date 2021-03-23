@@ -31,6 +31,12 @@ jobs:
         run: |
           ./tests/_pssa.ps1
 
+      - name: ⏬ Install older Pester version
+        shell: pwsh
+        run: |
+          Install-Module -Name Pester -Force -SkipPublisherCheck -MaximumVersion 4.99
+          Import-Module -Name Pester -MaximumVersion 4.99
+
       - name: ✅ Invoke Pester
         shell: pwsh
         run: |
