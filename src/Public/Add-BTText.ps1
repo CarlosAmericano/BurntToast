@@ -51,11 +51,11 @@ function Add-BTText {
 
         PS C:\>$Builder | Add-BTText -Text 'First Line of Text' -PassThru |
                           Add-BTText -Text 'Second Line of Text' -PassThru |
-                          Add-BTText -Text 'Third Line of Text' -PassThru
+                          Add-BTText -Text 'Third Line of Text'
 
         This example adds three custom text elements to a toast content builder object using multiple calls of the Add-BTText function on the pipeline.
 
-        The PassThru parameter is used to pass the toast content builder down the pipeline. Note that this is still required at the end of the pipeline in order to store the resulting object.
+        The PassThru parameter is used to pass the toast content builder down the pipeline. Note that this is not required at the end of the pipeline as the builder object being added to is already stored in a variable.
 
         .EXAMPLE
         PS C:\>$Builder = New-BTContentBuilder

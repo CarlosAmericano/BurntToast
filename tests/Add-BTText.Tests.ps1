@@ -72,9 +72,10 @@ Describe 'Add-BTText' {
     }
     Context 'add three text elements with three function calls piped together with PassThru parameter' {
         BeforeAll {
-            $Builder = New-BTContentBuilder | Add-BTText -Text 'First Line of Text' -PassThru |
-                                              Add-BTText -Text 'Second Line of Text' -PassThru |
-                                              Add-BTText -Text 'Third Line of Text' -PassThru
+            $Builder = New-BTContentBuilder
+            $Builder | Add-BTText -Text 'First Line of Text' -PassThru |
+                       Add-BTText -Text 'Second Line of Text' -PassThru |
+                       Add-BTText -Text 'Third Line of Text'
         }
 
         It 'generates the expected XML' {
