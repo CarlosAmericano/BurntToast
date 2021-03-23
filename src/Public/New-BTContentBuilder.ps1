@@ -27,8 +27,10 @@ function New-BTContentBuilder {
     #>
 
     [Alias('Builder')]
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess = $true)]
     param ()
 
-    [Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder]::new()
+    if ($PSCmdlet.ShouldProcess( "Creating instance of a ToastContentBuilder object and returning it.", $env:COMPUTERNAME, 'New-BTContentBuilder' )) {
+        [Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder]::new()
+    }
 }
