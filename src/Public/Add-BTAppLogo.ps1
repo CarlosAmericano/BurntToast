@@ -1,4 +1,4 @@
-﻿function Add-BTAppLogo {
+function Add-BTAppLogo {
     <#
         .SYNOPSIS
         Override the app logo with a custom image of choice that will be displayed on the toast.

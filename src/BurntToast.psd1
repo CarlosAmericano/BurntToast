@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule        = 'BurntToast.psm1'
     ModuleVersion     = '1.0.0'
     GUID              = '751a2aeb-a68f-422e-a2ea-376bdd81612a'

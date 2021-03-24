@@ -1,4 +1,4 @@
-﻿function New-BTContentBuilder {
+function New-BTContentBuilder {
     <#
         .SYNOPSIS
         Create a toast builder object.
