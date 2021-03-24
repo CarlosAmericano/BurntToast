@@ -45,8 +45,8 @@ jobs:
         if: steps.cacher-pester.outputs.cache-hit != 'true'
         run: |
           Install-Module -Name Pester -Force -SkipPublisherCheck -MaximumVersion 4.99 -ErrorAction Stop
-          Import-Module -Name Pester -MaximumVersion 4.99
 
       - name: ✅ Invoke Pester
         run: |
+          Import-Module -Name Pester -MaximumVersion 4.99
           ./tests/_pester.ps1
