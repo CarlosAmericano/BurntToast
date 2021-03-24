@@ -3,7 +3,6 @@ on: [push, pull_request]
 jobs:
   assure-quality:
     strategy:
-      max-parallel: 1
       matrix:
         PSVer: [pwsh, powershell]
     defaults:

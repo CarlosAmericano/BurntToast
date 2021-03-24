@@ -106,7 +106,7 @@ Describe 'Add-BTText' {
 
     Context 'attempting to add too many lines of text to a single toast' {
         It 'generates a warning and only ends up with three text elements' {
-            $CaptureFile = "$PSScriptRoot\WarningContent-Text.txt"
+            $CaptureFile = "$PSScriptRoot\WarningContent-Text_Add-BTText_$((New-Guid).Guid).txt"
             $ExpectedWarning = 'The max lines of text \(4\) on the toast notification has been reached, extra lines have been ignored.'
 
             $Builder = New-BTContentBuilder
