@@ -2,7 +2,13 @@ name: Quality Assurance
 on: [push, pull_request]
 jobs:
   assure-quality:
-    name: Assure Quality
+    strategy:
+      matrix:
+        PSVer: [pwsh, powershell]
+    defaults:
+      run:
+        shell: ${{ matrix.PSVer }}
+    name: Assure Quality - ${{ matrix.PSVer }}
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,13 +27,11 @@ jobs:
           key: ${{ steps.psmodulecache.outputs.keygen }}
       - name: 🤩 Install required PowerShell modules
         if: steps.cacher.outputs.cache-hit != 'true'
-        shell: pwsh
         run: |
           Set-PSRepository PSGallery -InstallationPolicy Trusted
           Install-Module ${{ steps.psmodulecache.outputs.needed }} -ErrorAction Stop
 
       - name: 👍 Invoke PSScriptAnalyzer
-        shell: pwsh
         run: |
           ./tests/_pssa.ps1
 
@@ -39,12 +43,10 @@ jobs:
           key: Win32NT-PSFramework-4.99
       - name: ⏬ Install older Pester version
         if: steps.cacher-pester.outputs.cache-hit != 'true'
-        shell: pwsh
         run: |
           Install-Module -Name Pester -Force -SkipPublisherCheck -MaximumVersion 4.99 -ErrorAction Stop
           Import-Module -Name Pester -MaximumVersion 4.99
 
       - name: ✅ Invoke Pester
-        shell: pwsh
         run: |
           ./tests/_pester.ps1
