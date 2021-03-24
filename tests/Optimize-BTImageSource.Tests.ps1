@@ -16,7 +16,7 @@ Describe 'Optimize-BTImageSource' -Tag 'Private' {
 
             Optimize-BTImageSource -Source $ImagePath 3> $CaptureFile
 
-            $CaptureFile | Should -FileContentMatchExactly $ExpectedWarning
+            $CaptureFile | Should -FileContentMatchMultiline $ExpectedWarning
 
             Remove-Item $CaptureFile -Force
         }
