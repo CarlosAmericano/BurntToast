@@ -36,17 +36,25 @@ jobs:
           ./tests/_pssa.ps1
 
       - name: 🧰 Setup PowerShell module cache - Pester
+        if: ${{ matrix.PSVer }} == 'pwsh'
         id: cacher-pester
         uses: actions/cache@v2
         with:
-          path: ${{ steps.psmodulecache.outputs.modulepath }}\Pester
-          key: Win32NT-${{ matrix.PSVer }}-PSFramework-4.99
+          path: C:\Users\runneradmin\Documents\Windows PowerShell\Modules\Pester
+          key: Win32NT-${{ matrix.PSVer }}-PSFramework-4.10.1
+      - name: 🧰 Setup PowerShell module cache - Pester
+        if: ${{ matrix.PSVer }} == 'powershell'
+        id: cacher-pester
+        uses: actions/cache@v2
+        with:
+          path: C:\Users\runneradmin\Documents\PowerShell\Modules\Pester
+          key: Win32NT-${{ matrix.PSVer }}-PSFramework-4.10.1
       - name: ⏬ Install older Pester version
         if: steps.cacher-pester.outputs.cache-hit != 'true'
         run: |
-          Install-Module -Name Pester -Force -SkipPublisherCheck -MaximumVersion 4.99 -ErrorAction Stop
+          Install-Module -Name Pester -Force -SkipPublisherCheck -RequiredVersion 4.10.1 -ErrorAction Stop
 
       - name: ✅ Invoke Pester
         run: |
-          Import-Module -Name Pester -MaximumVersion 4.99
+          Import-Module -Name Pester -MaximumVersion 4.10.1
           ./tests/_pester.ps1
