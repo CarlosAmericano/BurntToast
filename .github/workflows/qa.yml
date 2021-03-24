@@ -3,7 +3,6 @@ on: [push, pull_request]
 jobs:
   assure-quality:
     strategy:
-      max-parallel: 1
       matrix:
         PSVer: [pwsh, powershell]
     defaults:
@@ -41,7 +40,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: C:\Program Files\WindowsPowerShell\Modules\Pester
-          key: Win32NT-PSFramework-4.10.1
+          key: Win32NT-${{ matrix.PSVer }}-PSFramework-4.10.1
       - name: ⏬ Install older Pester version
         if: steps.cacher-pester.outputs.cache-hit != 'true'
         shell: powershell
