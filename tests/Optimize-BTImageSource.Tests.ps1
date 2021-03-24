@@ -11,7 +11,7 @@ Describe 'Optimize-BTImageSource' -Tag 'Private' {
 
         It 'feedback about invalid local file' {
             $ImagePath = 'C:\Fake\Images\BurntToast.png'
-            $CaptureFile = "$PSScriptRoot\WarningContent_Optimize-BTImageSource_$((New-Guid).Guid).txt"
+            $CaptureFile = "$PSScriptRoot\WarningContent.txt"
             $ExpectedWarning = ("The image source '{0}' doesn't exist, failed back to icon." -f $ImagePath).Replace('\', '\\')
 
             Optimize-BTImageSource -Source $ImagePath 3> $CaptureFile

@@ -6,7 +6,7 @@ Describe 'Add-BTText' {
 
         Import-Module "$PSScriptRoot/../src/BurntToast.psd1" -Force
     }
-
+    
     Context 'add one text element by parameter' {
         BeforeAll {
             $Builder = New-BTContentBuilder
@@ -106,7 +106,7 @@ Describe 'Add-BTText' {
 
     Context 'attempting to add too many lines of text to a single toast' {
         It 'generates a warning and only ends up with three text elements' {
-            $CaptureFile = "$PSScriptRoot\WarningContent_Add-BTText_$((New-Guid).Guid).txt"
+            $CaptureFile = "$PSScriptRoot\WarningContent.txt"
             $ExpectedWarning = 'The max lines of text \(4\) on the toast notification has been reached, extra lines have been ignored. ' +
                                'The first text element automatically reserves 2 lines of text, consider using the MaxLines parameter to override this.'
 
