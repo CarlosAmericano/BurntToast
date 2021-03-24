@@ -1,4 +1,12 @@
 Describe 'Add-BTText' {
+    BeforeAll {
+        if (Get-Module -Name 'BurntToast') {
+            Remove-Module -Name 'BurntToast'
+        }
+
+        Import-Module "$PSScriptRoot/../src/BurntToast.psd1" -Force
+    }
+    
     Context 'add one text element by parameter' {
         BeforeAll {
             $Builder = New-BTContentBuilder

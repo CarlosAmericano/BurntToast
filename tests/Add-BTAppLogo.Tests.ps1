@@ -1,4 +1,12 @@
 Describe 'Add-BTAppLogo' {
+    BeforeAll {
+        if (Get-Module -Name 'BurntToast') {
+            Remove-Module -Name 'BurntToast'
+        }
+
+        Import-Module "$PSScriptRoot/../src/BurntToast.psd1" -Force
+    }
+
     It 'handles local image basic' {
         InModuleScope BurntToast {
             $ImagePath = 'C:\Fake\Images\BurntToast.png'
