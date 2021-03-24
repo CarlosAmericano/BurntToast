@@ -40,7 +40,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.psmodulecache.outputs.modulepath }}\Pester
-          key: Win32NT-PSFramework-4.99
+          key: Win32NT-${{ matrix.PSVer }}-PSFramework-4.99
       - name: ⏬ Install older Pester version
         if: steps.cacher-pester.outputs.cache-hit != 'true'
         run: |
