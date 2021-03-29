@@ -5,3 +5,4 @@
 [ ] Setup workflow to test on commit, and build on PR
 [ ] Do help then tests for Add-BTAppLogo
 [X] Add test coverage (and example?) for text languages in Add-BTText
+[ ] Config item: always passthru on Add-* functions
