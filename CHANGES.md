@@ -2,9 +2,9 @@
 
 - [v1.0.0-Preview1](https://github.com/Windos/BurntToast/releases/download/v1.0.0-Preview1/BurntToast.zip)
 
-  - UPDATE: Microsoft.Windows.SDK.NET.Ref libraries to 10.0.19041.15
+  - UPDATE: Microsoft.Windows.SDK.NET.Ref libraries to 10.0.20348.19
 
-  - UPDATE: Microsoft.Toolkit.Uwp.Notifications library to 7.0.0
+  - UPDATE: Microsoft.Toolkit.Uwp.Notifications library to 7.0.2
 
 - see more in the [Full Change Log](CHANGES.md)
 

@@ -21,8 +21,8 @@
             IconUri      = 'https://raw.githubusercontent.com/Windos/BurntToast/main/Media/BurntToast-Logo.png'
             ReleaseNotes = '# 1.0.0-Preview1
 
-* UPDATE: Microsoft.Windows.SDK.NET.Ref libraries to 10.0.19041.15
-* UPDATE: Microsoft.Toolkit.Uwp.Notifications library to 7.0.0
+* UPDATE: Microsoft.Windows.SDK.NET.Ref libraries to 10.0.20348.19
+* UPDATE: Microsoft.Toolkit.Uwp.Notifications library to 7.0.2
 '
         }
     }
