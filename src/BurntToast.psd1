@@ -9,7 +9,8 @@
     PowerShellVersion = '5.0'
     FunctionsToExport = 'Add-BTAppLogo',
                         'Add-BTText',
-                        'New-BTContentBuilder'
+                        'New-BTContentBuilder',
+                        'Show-BTNotification'
     CmdletsToExport   = @()
     AliasesToExport   = @('Builder')
     PrivateData       = @{
